@@ -1,22 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Pontuacao : MonoBehaviour
 {
     [SerializeField]
-    private Text textoPontuacao;
+    private MeuEventoPersonalizadoInt aoPontuar;
     private int pontos;
 
     public void Pontuar()
     {
         pontos++;
-        AtualizarPontuacao();
+        aoPontuar.Invoke(pontos);
     }
+}
 
-    private void AtualizarPontuacao()
-    {
-        textoPontuacao.text = pontos.ToString();
-    }
+[Serializable]
+public class MeuEventoPersonalizadoInt : UnityEvent<int>
+{
+
 }
