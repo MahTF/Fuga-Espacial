@@ -4,6 +4,8 @@ using UnityEngine;
 public class Gerador : MonoBehaviour
 {
     [SerializeField]
+    private Transform alvo;
+    [SerializeField]
     private GameObject prefabInimigo;
     [SerializeField]
     private float tempo;
@@ -12,32 +14,24 @@ public class Gerador : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(this.IniciarGeracao());
-    }
-
-    private IEnumerator IniciarGeracao()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(this.tempo);
-            this.Instanciar();
-        }
+        InvokeRepeating("Instanciar", 0f, tempo);
     }
 
     private void Instanciar()
     {
-        var inimigo = GameObject.Instantiate(this.prefabInimigo);
-        this.DefinirPosicaoInimigo(inimigo);
+        var inimigo = Instantiate(prefabInimigo);
+        DefinirPosicaoInimigo(inimigo);
+        inimigo.GetComponent<Seguir>().SetAlvo(alvo);
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)
     {
         var posicaoAleatoria = new Vector3(
-                        Random.Range(-this.raio, this.raio),
-                        Random.Range(-this.raio, this.raio),
+                        Random.Range(-raio, raio),
+                        Random.Range(-raio, raio),
                         0);
 
-        var posicaoInimigo = this.transform.position + posicaoAleatoria;
+        var posicaoInimigo = transform.position + posicaoAleatoria;
         inimigo.transform.position = posicaoInimigo;
     }
 }
