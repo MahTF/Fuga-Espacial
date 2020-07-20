@@ -5,17 +5,22 @@ using UnityEngine;
 public class Seguir : MonoBehaviour
 {
     [SerializeField]
-    private float Velocidade;
+    private float forca;
     private Transform alvo;
+    private Rigidbody2D fisica;
 
-    private void Update()
+    private void Awake()
+    {
+        fisica = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
     {
         var deslocamento = alvo.position - transform.position;
         deslocamento = deslocamento.normalized;
+        deslocamento *= forca;
 
-        deslocamento *= Velocidade;
-
-        transform.position += deslocamento * Time.deltaTime;
+        fisica.AddForce(deslocamento, ForceMode2D.Force);
     }
 
     public void SetAlvo(Transform novoAlvo)
