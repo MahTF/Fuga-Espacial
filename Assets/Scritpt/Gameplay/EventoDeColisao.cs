@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class EventoDeColisao : MonoBehaviour {
-
     [SerializeField]
     private UnityEvent aoBater;
 

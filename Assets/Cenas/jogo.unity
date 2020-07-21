@@ -163,7 +163,7 @@ PrefabInstance:
     - target: {fileID: 61276168237055288, guid: 867da2ed13811b347a09b4756abcd004,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114245909540524810, guid: 867da2ed13811b347a09b4756abcd004,
         type: 3}
@@ -964,6 +964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1377614287}
   - component: {fileID: 1377614286}
+  - component: {fileID: 1377614288}
   m_Layer: 0
   m_Name: Pontuacao
   m_TagString: Untagged
@@ -1011,6 +1012,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377614288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377614285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4179ac6e3570cc7498c7d19fbe7320e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1542939593
 GameObject:
   m_ObjectHideFlags: 0

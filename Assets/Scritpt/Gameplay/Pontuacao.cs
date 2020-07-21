@@ -1,11 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Pontuacao : MonoBehaviour
 {
+    public int Pontos {
+        get
+        {
+            return pontos;
+        }
+    }
     [SerializeField]
     private MeuEventoPersonalizadoInt aoPontuar;
     private int pontos;
@@ -15,10 +19,4 @@ public class Pontuacao : MonoBehaviour
         pontos++;
         aoPontuar.Invoke(pontos);
     }
-}
-
-[Serializable]
-public class MeuEventoPersonalizadoInt : UnityEvent<int>
-{
-
 }
