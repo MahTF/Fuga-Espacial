@@ -42,14 +42,14 @@ public class ControlePausa : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2F);
         painelPause.SetActive(false);
         MudarEscalaTempo(1);
-        jogoParado = true;
+        jogoParado = false;
     }
 
     private void PararJogo()
     {
         painelPause.SetActive(true);
         MudarEscalaTempo(escalaTempoPause);
-        jogoParado = false;
+        jogoParado = true;
     }
 
     private void MudarEscalaTempo(float escala)

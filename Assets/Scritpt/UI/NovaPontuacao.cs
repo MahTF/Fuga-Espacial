@@ -6,6 +6,8 @@ public class NovaPontuacao : MonoBehaviour
 {
     [SerializeField]
     private TextoDinamico textoPontuacao;
+    [SerializeField]
+    private Ranking ranking;
     private Pontuacao pontuacao;
 
     private void Start()
@@ -17,5 +19,6 @@ public class NovaPontuacao : MonoBehaviour
             totalPontos = pontuacao.Pontos;
         }
         textoPontuacao.AtualizarTexto(totalPontos);
+        ranking.AdicionarPontuacao(totalPontos);
     }
 }
