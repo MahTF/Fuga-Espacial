@@ -16,4 +16,9 @@ public class TextoDinamico : MonoBehaviour
     {
         texto.text = numero.ToString();
     }
+
+    public void AtualizarTexto(string novoTexto)
+    {
+        texto.text = novoTexto.Trim();
+    }
 }

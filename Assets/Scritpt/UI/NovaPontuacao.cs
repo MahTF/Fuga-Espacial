@@ -9,6 +9,7 @@ public class NovaPontuacao : MonoBehaviour
     [SerializeField]
     private Ranking ranking;
     private Pontuacao pontuacao;
+    private int id;
 
     private void Start()
     {
@@ -19,6 +20,11 @@ public class NovaPontuacao : MonoBehaviour
             totalPontos = pontuacao.Pontos;
         }
         textoPontuacao.AtualizarTexto(totalPontos);
-        ranking.AdicionarPontuacao(totalPontos);
+        id = ranking.AdicionarPontuacao(totalPontos, "Nome");
+    }
+
+    public void AlterarNome(string nome)
+    {
+        ranking.AlterarNome(nome, id);
     }
 }

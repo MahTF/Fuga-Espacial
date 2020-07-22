@@ -8,20 +8,31 @@ public class Ranking : MonoBehaviour
 {
     private static string NOME_ARQUIVO = "Ranking.json";
     [SerializeField]
-    private List<int> pontos;
+    private List<Colocado> listaColocados;
     private string caminhoArquivo;
 
     private void Awake()
     {
         caminhoArquivo = Path.Combine(Application.persistentDataPath, NOME_ARQUIVO);
-        var textoJson = File.ReadAllText(caminhoArquivo);
-        JsonUtility.FromJsonOverwrite(textoJson, this);
+        if (File.Exists(caminhoArquivo))
+        {
+            var textoJson = File.ReadAllText(caminhoArquivo);
+            JsonUtility.FromJsonOverwrite(textoJson, this);
+        }
+        else
+        {
+            listaColocados = new List<Colocado>();
+        }
     }
 
-    public void AdicionarPontuacao(int pontos)
+    public int AdicionarPontuacao(int pontos, string nome)
     {
-        this.pontos.Add(pontos);
+        var id = listaColocados.Count * Random.Range(1, 10000);
+        var novoColocado = new Colocado(nome, pontos, id);
+        listaColocados.Add(novoColocado);
+        listaColocados.Sort();
         SalvarRanking();
+        return id;
     }
 
     private void SalvarRanking()
@@ -30,8 +41,21 @@ public class Ranking : MonoBehaviour
         File.WriteAllText(caminhoArquivo, textoJson);
     }
 
-    public ReadOnlyCollection<int> GetPontos()
+    public ReadOnlyCollection<Colocado> GetColocados()
     {
-        return pontos.AsReadOnly();
+        return listaColocados.AsReadOnly();
+    }
+
+    public void AlterarNome(string novoNome, int id)
+    {
+        foreach(var item in listaColocados)
+        {
+            if(item.Id == id)
+            {
+                item.Nome = novoNome.Trim();
+                break;
+            }
+        }
+        SalvarRanking();
     }
 }

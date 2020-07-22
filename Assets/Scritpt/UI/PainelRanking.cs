@@ -11,8 +11,8 @@ public class PainelRanking : MonoBehaviour
 
     private void Start()
     {
-        var listaPontos = ranking.GetPontos();
-        for (int i = 0; i < listaPontos.Count; i++)
+        var listaColocados = ranking.GetColocados();
+        for (int i = 0; i < listaColocados.Count; i++)
         {
             if (i >= 5)
             {
@@ -20,7 +20,7 @@ public class PainelRanking : MonoBehaviour
             }
 
             var colocado = Instantiate(prefabColocado, transform);
-            colocado.GetComponent<ItemRanking>().Configurar(i + 1, "Nome", listaPontos[i]);
+            colocado.GetComponent<ItemRanking>().Configurar(i + 1, listaColocados[i].Nome, listaColocados[i].Pontos);
         }
     }
 }
