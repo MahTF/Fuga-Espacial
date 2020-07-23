@@ -507,7 +507,8 @@ AudioSource:
   m_GameObject: {fileID: 956519201}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5693500452833556668, guid: 37a054c15a70cf449b4308cbb8418540,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: e8ed32b4a92df764583fd733549ac839, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1045,6 +1046,17 @@ MonoBehaviour:
       - m_Target: {fileID: 679329955}
         m_MethodName: AtualizarTexto
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 956519202}
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
