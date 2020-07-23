@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoPontuacao: {fileID: 82167984}
+  textoNome: {fileID: 55671132}
   ranking: {fileID: 222396276}
 --- !u!114 &1016959375
 MonoBehaviour:
