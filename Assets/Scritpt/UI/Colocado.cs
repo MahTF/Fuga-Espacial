@@ -8,9 +8,9 @@ public class Colocado : IComparable
 {
     public string Nome;
     public int Pontos;
-    public int Id;
+    public string Id;
 
-    public Colocado(string nome, int pontos, int id)
+    public Colocado(string nome, int pontos, string id)
     {
         Nome = nome;
         Pontos = pontos;

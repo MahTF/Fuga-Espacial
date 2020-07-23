@@ -9,7 +9,7 @@ public class NovaPontuacao : MonoBehaviour
     [SerializeField]
     private Ranking ranking;
     private Pontuacao pontuacao;
-    private int id;
+    private string id;
 
     private void Start()
     {

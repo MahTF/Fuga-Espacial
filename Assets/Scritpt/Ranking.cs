@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -25,9 +26,9 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    public int AdicionarPontuacao(int pontos, string nome)
+    public string AdicionarPontuacao(int pontos, string nome)
     {
-        var id = listaColocados.Count * Random.Range(1, 10000);
+        var id = Guid.NewGuid().ToString();
         var novoColocado = new Colocado(nome, pontos, id);
         listaColocados.Add(novoColocado);
         listaColocados.Sort();
@@ -46,7 +47,7 @@ public class Ranking : MonoBehaviour
         return listaColocados.AsReadOnly();
     }
 
-    public void AlterarNome(string novoNome, int id)
+    public void AlterarNome(string novoNome, string id)
     {
         foreach(var item in listaColocados)
         {
