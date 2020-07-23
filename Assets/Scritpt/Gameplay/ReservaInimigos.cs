@@ -20,6 +20,8 @@ public class ReservaInimigos : MonoBehaviour
         for (int i = 0; i <= quantidade; i++)
         {
             var inimigo = Instantiate(prefabInimigo, transform);
+            var objetoReserva = inimigo.GetComponent<ObjetoReservaInimigos>();
+            objetoReserva.SetReserva(this);
             inimigo.SetActive(false);
             reservaInimigos.Push(inimigo);
         }
@@ -27,11 +29,19 @@ public class ReservaInimigos : MonoBehaviour
 
     public GameObject PegarInimigo()
     {
-        return reservaInimigos.Pop();
+        var inimigo = reservaInimigos.Pop();
+        inimigo.SetActive(true);
+        return inimigo;
     }
 
     public bool PossuiInimigo()
     {
         return reservaInimigos.Count > 0;
+    }
+
+    public void ReciclarInimigo(GameObject inimigo)
+    {
+        inimigo.SetActive(false);
+        reservaInimigos.Push(inimigo);
     }
 }
