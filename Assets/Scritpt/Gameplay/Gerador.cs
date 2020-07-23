@@ -8,11 +8,11 @@ public class Gerador : MonoBehaviour
     [SerializeField]
     private Pontuacao pontuacao;
     [SerializeField]
-    private GameObject prefabInimigo;
-    [SerializeField]
     private float tempo;
     [SerializeField]
     private float raio;
+    [SerializeField]
+    private ReservaInimigos reserva;
 
     private void Start()
     {
@@ -21,10 +21,14 @@ public class Gerador : MonoBehaviour
 
     private void Instanciar()
     {
-        var inimigo = Instantiate(prefabInimigo);
-        DefinirPosicaoInimigo(inimigo);
-        inimigo.GetComponent<Seguir>().SetAlvo(alvo);
-        inimigo.GetComponent<Pontuavel>().SetPontuacao(pontuacao);
+        if (reserva.PossuiInimigo())
+        {
+            var inimigo = reserva.PegarInimigo();
+            inimigo.SetActive(true);
+            DefinirPosicaoInimigo(inimigo);
+            inimigo.GetComponent<Seguir>().SetAlvo(alvo);
+            inimigo.GetComponent<Pontuavel>().SetPontuacao(pontuacao);
+        }
     }
 
     private void DefinirPosicaoInimigo(GameObject inimigo)
