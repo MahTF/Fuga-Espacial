@@ -238,7 +238,7 @@ GameObject:
   m_Layer: 0
   m_Name: GeradorDeInimigos
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -250,7 +250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563932336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.95, y: -0.62, z: 0}
+  m_LocalPosition: {x: -11.05, y: -5.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -271,7 +271,12 @@ MonoBehaviour:
   alvo: {fileID: 607986067}
   pontuacao: {fileID: 1377614286}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 10
   reserva: {fileID: 1273286653}
 --- !u!1 &607986061 stripped
 GameObject:
@@ -775,7 +780,7 @@ GameObject:
   m_Layer: 0
   m_Name: GeradorDeInimigos
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -794,7 +799,12 @@ MonoBehaviour:
   alvo: {fileID: 607986067}
   pontuacao: {fileID: 1377614286}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 18.5
+    height: 1
   reserva: {fileID: 1273286653}
 --- !u!4 &1028723155
 Transform:
@@ -804,7 +814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028723153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 8, z: 0}
+  m_LocalPosition: {x: -9.68, y: 5.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1511,7 +1521,7 @@ GameObject:
   m_Layer: 0
   m_Name: GeradorDeInimigos
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1530,7 +1540,12 @@ MonoBehaviour:
   alvo: {fileID: 607986067}
   pontuacao: {fileID: 1377614286}
   tempo: 1
-  raio: 3
+  area:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 10
   reserva: {fileID: 1273286653}
 --- !u!4 &1882994928
 Transform:
@@ -1540,7 +1555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882994926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.72, y: -0.19, z: 0}
+  m_LocalPosition: {x: 9.21, y: -4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
